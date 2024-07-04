@@ -159,7 +159,7 @@ const Navbar = () => {
               onClick={() => {
                 navigate("/adminlogin")}}
             >
-              Admin Login
+              Official Login
             </button>
         </div>) :(
           <div className='md:flex hidden gap-[2vh]'>
@@ -234,14 +234,14 @@ const Navbar = () => {
                       <button
                         onClick={() => {navigate('/adminlogin'); toggleSidebar()}}
                         className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                        Admin Login
+                        Official Login
                       </button>
                   )}
                   
                   <button
                     onClick={() => {navigate('/mlaprofile'); toggleSidebar()}}
                     className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    MLA
+                    About MLA
                   </button>
                   {localStorage.getItem("user") && (
                       <button

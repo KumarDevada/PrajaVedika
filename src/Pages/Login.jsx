@@ -41,8 +41,8 @@ const Login = () => {
 
 
   const login = async () => {
-    if (PhoneNumber === "" || Password === "") {
-      alert("Please fill all the fields");
+    if (PhoneNumber.length !== 10) {
+      alert("Please a valid phone number");
     } else {
       try {
         // navigate('/')
@@ -78,9 +78,20 @@ const Login = () => {
   };
 
   const Register = async () => {
-    if (Username === "" || Password === "") {
-      alert("Please fill all the fields");
-    } else {
+    if (Username.length < 3) 
+      alert("Please enter a valid user name");
+    else if(Password === "") 
+      alert("Please enter a valid password")
+    else if(Aadhar.length !== 12)
+      alert("Please enter a valid Aadhar number");
+    else if(PhoneNumber.length != 10)
+      alert("Please enter a valid Phone number");
+    else if(selectedMandal === '')
+      alert("Please select a valid Mandal name");
+    else if(selectedVillage === '')
+      alert("Please select a valid Village name");
+      
+      else {
       try {
         // navigate('/')
         const user = {

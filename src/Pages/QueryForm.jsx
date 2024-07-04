@@ -67,6 +67,10 @@ const QueryForm = () => {
   const handlesubmit = async (event) => {
     event.preventDefault();
 
+    if(Description.length < 20) {
+      alert('A Query should have atleast 20 characters.')
+      return;
+    }
     // mptcId, username, phoneNumber, mandalName, villageName, description, date, level, mptc
     try {
       // navigate('/')
