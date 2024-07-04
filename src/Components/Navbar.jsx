@@ -53,6 +53,7 @@ const Navbar = () => {
     }
     else {
       alert('Please Login to continue.')
+      navigate('/login')
     }
   }
 

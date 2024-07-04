@@ -14,7 +14,7 @@ const Explore = () => {
     const [mptcname, setmptcname] = useState('');
     const [zptc, setzptc] = useState('')
     const [mpp, setmpp] = useState('')
-    const mla = 'Burla Ramanjaneyulu'
+    const mla = 'Varupula Satya Prabha'
     const {setislogin, islogin,isadmin , User, setUser, setmptcid, mandalVillageData }  = useContext(Context)
 
     const fetchmpp = async () => {

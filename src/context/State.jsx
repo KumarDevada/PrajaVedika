@@ -12,7 +12,7 @@ const State = (props) => {
     const [isadmin, setadmin] = useState('')
 
     const [mladata , setmladata] = useState({
-      name : 'Burla Ramanjaneyulu',
+      name : 'Varupula Satya Prabha',
       phone: '123'
     })
 

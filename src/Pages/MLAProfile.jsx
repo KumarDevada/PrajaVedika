@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import mla from '../assets/mla.jpg'
+import mla from '../assets/mla2.jpg'
 const MLAProfile = () => {
   const [showFullBio, setShowFullBio] = useState(false);
 
@@ -17,9 +17,9 @@ const MLAProfile = () => {
           className="w-36 h-36 rounded-full border-4 border-white mb-4 md:mb-0"
         />
         <div className="text-center md:text-left">
-          <h1 className="text-3xl font-bold text-white">Burla Ramanjaneyulu</h1>
+          <h1 className="text-3xl font-bold text-white">Varupula Satya Prabha</h1>
           <h2 className="text-xl text-gray-200">MLA, Prathipadu Constituency</h2>
-          <h2 className="text-xl text-gray-200">Age : 65</h2>
+          <h2 className="text-xl text-gray-200">Born : 1979</h2>
           <h2 className="text-xl text-gray-200">Telugu Desam Party</h2>
         </div>
       </header>
@@ -28,7 +28,7 @@ const MLAProfile = () => {
       <section className="mt-6 px-4">
         <h3 className="text-2xl font-semibold text-orange-600">Biography</h3>
         <p className="mt-2 text-gray-700">
-        Burla Ramanjaneyulu is the current MLA of the constituency, having won the 2024 Andhra Pradesh Legislative Assembly election.
+        Varupula Satyaprabha (born 1979) is an Indian politician from Andhra Pradesh. She is an MLA of Telugu Desam Party from Prathipadu, Kakinada Assembly Constituency in Kakinada district. She won the 2024 Andhra Pradesh Legislative Assembly Election.
         </p>
         <button onClick={toggleBio} className="text-orange-500 mt-2 focus:outline-none">
           {showFullBio ? 'Show Less' : 'Read More'}
@@ -38,10 +38,10 @@ const MLAProfile = () => {
             showFullBio ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
           }`}>
             <p>
-            His profession according to the election affidavit filed with the Election Commission of India, and as analysed by the Association for Democratic Reforms (ADR) for the Lok Sabha elections 2024 
+            Prabha won the 2024 Andhra Pradesh Legislative Assembly election as TDP candidate from Prathipadu Assembly Constituency. 
             </p>
             <p>
-            He is a Retired IAS Officer & Social Worker. His educational qualifications include Doctorate and is 65 years of age.
+            She defeated Varupula Subbarao of YSR Congress Party by a margin of 38,768 votes. In April 2024, she left the campaigning to perform a surgery on a pregnant woman.
             </p>
           </div>
         
@@ -65,7 +65,7 @@ const MLAProfile = () => {
                 <strong>Portfolio:</strong> Telugu Desam Party politician
                 </p>
                 <p className="mt-2 text-gray-700">
-                Burla Ramanjaneyulu is the Telugu Desam Party (TDP) candidate from 93. Prathipadu (Scheduled Caste) Assembly constituency in Andhra Pradesh in the 2024 Andhra Pradesh Assembly elections
+                Varupula Satya Prabha is the Telugu Desam Party (TDP) candidate from 93. Prathipadu (Scheduled Caste) Assembly constituency in Andhra Pradesh in the 2024 Andhra Pradesh Assembly elections
                 </p>
             </section>
 
@@ -73,13 +73,13 @@ const MLAProfile = () => {
                 <h3 className="text-2xl font-semibold text-orange-600">Personal Information</h3>
                 <p className="mt-2 text-gray-700">
                 <strong>Education:</strong> Doctorate
-                Doctor of Philosophy (Ph.D) from Sri Krishnadevaraya University, Anantapuram, Passed the year November 2019
+                Post Graduate M.B.A. from Andhra University, Visakhapatnam, A.P. in the year 2006
                 </p>
                 <p className="mt-2 text-gray-700">
-                <strong>Career:</strong> Nonprofit Sector (Community Development)
+                <strong>Career:</strong> Business
                 </p>
                 <p className="mt-2 text-gray-700">
-                <strong>Achievements:</strong> Retired IAS Officer 
+                <strong>Achievements:</strong> -
                 </p>
                 <p className="mt-2 text-gray-700">
                 <strong>Interests:</strong> Reading, Community Service & Social Worker
@@ -99,7 +99,7 @@ const MLAProfile = () => {
             <strong>Constituency Name:</strong> Prathipadu Constituency
             </p>
             <p className="mt-2 text-gray-700">
-            Prathipadu (ప్రత్తిపాడు) is an Assembly (Sasana Sabha/Vidhan Sabha) constituency in Andhra Pradesh. This constituency is located in the South region of India and in the Coastal Andhra region within Andhra Pradesh. This seat includes the following districts of Andhra Pradesh: Guntur. Prathipadu Assembly seat can be classified as: Rural and the reservation status of this seat is: Scheduled Caste. 93. Prathipadu was scheduled to vote on Monday, May 13, 2024, alongwith voting in Phase 4 of the 2024 Lok Sabha general election.
+            Prathipadu Assembly constituency is a constituency in Kakinada district of Andhra Pradesh that elects representatives to the Andhra Pradesh Legislative Assembly in India. It is one of the seven assembly segments of the Kakinada Lok Sabha constituency.
             </p>
         </section>
 
@@ -134,7 +134,7 @@ const MLAProfile = () => {
 
       {/* Quote or Message */}
       <section className="mt-6 px-4 bg-orange-100 p-4 rounded-lg">
-        <h3 className="text-2xl font-semibold text-orange-600">Message from BURLA RAMANJANEYULU</h3>
+        <h3 className="text-2xl font-semibold text-orange-600">Message from Varupula Satya Prabha</h3>
         <p className="mt-2 italic text-gray-700">
           "I am committed to serving the people of Pratipadu Constituency with integrity and dedication. Together, we can build a stronger, more vibrant community."
         </p>
