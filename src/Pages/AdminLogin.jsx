@@ -124,7 +124,7 @@ const AdminLogin = () => {
       }
   
       if (!adminFound) {
-        alert('Admin ID not found');
+        alert('Official ID not found');
         setloading(false);
       }
       else navigate('/')
@@ -154,7 +154,7 @@ const AdminLogin = () => {
         {flag ? (<div className="auth w-80 mt-16 bg-white h-fit flex flex-col items-center shadow-xl p-6  rounded-xl">
           <div>
             <h1 className=" mt-2 font-montserrat text-center font-bold text-3xl text-orange-500">
-              Admin Login @ Praja Vedika
+              Official Login @ Praja Vedika
             </h1>
             <p className=" font-montserrat text-slate-500 font-light text-center">
               Please enter your details
@@ -163,7 +163,7 @@ const AdminLogin = () => {
 
           <div className="flex flex-col items-center mt-4 gap-[2vh] md:w-fit  w-full  ">
             
-                <h2 className="text-2xl font-bold mb-6 text-center text-slate-500">Select Admin Type</h2>
+                <h2 className="text-2xl font-bold mb-6 text-center text-slate-500">Select Official Type</h2>
                 <div className="w-full flex justify-center gap-3">
                   <div className="flex items-center">
                     <input
@@ -209,7 +209,7 @@ const AdminLogin = () => {
                 onChange={(e) => {
                   setadminid(e.target.value);
                 }}
-                placeholder="Admin ID"
+                placeholder="Official ID"
               />
             </div>
             {/* <div className=" border-b-2 flex">

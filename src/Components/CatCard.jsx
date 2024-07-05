@@ -131,7 +131,7 @@ const CatCard = ({item}) => {
               <h1 className='text-lg text-orange-600  font-semibold'> <i className='fa fa-user text-slate-500 text-md mr-2'> </i> {item.username}</h1>
             </div>
             <div className='w-full mb-3 flex justify-between'>
-              {(isadmin !== '') && <p className='text-md text-slate-700 font-montserrat font-bold'><i className='fa fa-phone text-slate-500 text-md mr-2'> </i>{item.phoneNumber}</p>}
+              {(isadmin !== '') && <p className='text-md text-slate-700 font-montserrat font-bold'><i className='fa-solid fa-phone text-slate-500 text-md mr-2'> </i>{item.phoneNumber}</p>}
               <p className='text-md text-slate-700 font-montserrat font-bold'>{item.date}</p>
             </div>
             <hr />

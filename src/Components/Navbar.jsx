@@ -12,7 +12,7 @@ import { GrLocation } from "react-icons/gr";
 import { useEffect } from 'react';
 const Navbar = () => {
 
-  const {isdark , setisdark, setadmin , setislogin, islogin , User, setUser} = useContext(Context)
+  const { resetState ,isdark , setisdark, setadmin , setislogin, islogin , User, setUser} = useContext(Context)
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -61,9 +61,9 @@ const Navbar = () => {
   const handlelogout = () => {
     const yes = confirm('Are you sure you want to log out ?');
     if(yes) {
-      localStorage.removeItem('user')
-      setUser(null)
-      setislogin(false);
+      localStorage.clear();
+      sessionStorage.clear();
+      resetState(); // Reset the context state
       navigate('/')
     }
   }
@@ -85,6 +85,7 @@ const Navbar = () => {
         <div className='md:flex hidden relative justify-between items-center gap-[10vh]'>  
         <nav >
           <ul className="hidden md:flex gap-10 justify-center items-center ">
+            
             <li
               className="font-semibold font-montserrat hover:text-[#01796f] cursor-pointer nav"
               onClick={() => navigate("/")}
@@ -165,7 +166,7 @@ const Navbar = () => {
           <div className='md:flex hidden gap-[2vh]'>
            
             <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {User?.username}</button>
-            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out</button>
+            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out <i class="fa-solid fa-right-to-bracket"></i></button>
             {/* <div className='flex w-fit h-fit cursor-pointer justify-center items-center p-2 rounded-lg border-2' onClick={()=>{navigate('/redeem')}} >
               <h1 className='font-semibold'>{User?.credits || 0} <i style={{color:'orange'}} "fa-brands fa-bitcoin"></i></h1>
               
@@ -194,7 +195,7 @@ const Navbar = () => {
           </button>
 
           <div
-              className={`fixed z-20 top-0 right-0 w-68 bg-white shadow-lg h-full transform ${
+              className={`fixed z-20 top-0 right-0 w-68 bg-slate-200 shadow-lg h-full transform ${
                 isOpen ? 'translate-x-0' : 'translate-x-full'
               } transition-transform duration-300 ease-in-out`}>
               <div className="p-4 mt-8">
@@ -206,7 +207,11 @@ const Navbar = () => {
                   </button>
                 </div>
                 
-                <div className="flex flex-col space-y-2">
+                <div className="flex flex-col bg-white py-4 px-2 rounded-md space-y-2">
+                  <button
+                    className='text-gray-700 text-center  font-bold    py-1 rounded-md'>
+                    Menu
+                  </button>
                   {localStorage.getItem("user") && (
                         <button
                           className='text-gray-700  font-medium  bg-white rounded-md'>
@@ -215,41 +220,70 @@ const Navbar = () => {
                     )}
                   <button
                     onClick={() => {navigate('/'); toggleSidebar()}}
-                    className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    Home
+                    className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                    Home <i class="fa-solid fa-arrow-right"></i>
                   </button>
                   <button
                     onClick={() => {navigate('/explore'); toggleSidebar()}}
-                    className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    Query
+                    className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                    Query <i class="fa-solid fa-arrow-right"></i>
                   </button>
                   {!localStorage.getItem("user") && (
                       <button
                         onClick={() => {navigate('/login'); toggleSidebar()}}
-                        className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                        User Login
+                        className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                        User Login <i class="fa-solid fa-arrow-right"></i>
                       </button>
                   )}
                   {!localStorage.getItem("user") && (
                       <button
                         onClick={() => {navigate('/adminlogin'); toggleSidebar()}}
-                        className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                        Official Login
+                        className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                        Official Login <i class="fa-solid fa-arrow-right"></i>
                       </button>
                   )}
                   
                   <button
                     onClick={() => {navigate('/mlaprofile'); toggleSidebar()}}
-                    className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    About MLA
+                    className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                    About MLA <i class="fa-solid fa-arrow-right"></i>
                   </button>
                   {localStorage.getItem("user") && (
                       <button
                         onClick={() => {toggleSidebar();handlelogout()}}
-                        className='text-gray-700 hover:text-white font-medium hover:bg-orange-300 bg-blue-400 active:bg-orange-500 py-1 rounded-md'>
-                        Log out
+                        className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-blue-400 active:bg-orange-500 py-1 rounded-md'>
+                        Log out <i class="fa-solid fa-right-to-bracket"></i>
                       </button>
                   )}
+
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+                  <br />
+
+                  <h1 className="font-semibold font-montserrat text-center text-xl text-slate-500">
+                    Support
+                  </h1>
+                  <ul className="flex flex-col items-center mt-3 gap-2 text-center">
+                    <li
+                      className="font-semibold font-montserrat  text-slate-600  cursor-pointer"
+                      
+                    >
+                      <h1 className='text-sm'><i class="fa-solid fa-envelope"></i> support@mail.com</h1>
+                    </li>
+                    <li
+                      className="font-semibold font-montserrat text-center text-slate-600  cursor-pointer"
+                      
+                    >
+                      <h1 className='text-sm'><i class="fa-solid fa-phone"></i> +91 934343434</h1>
+                    </li>
+                    
+                  </ul>
+                  
+
+
+                  
                 </div>
               </div>
             </div>

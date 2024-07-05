@@ -10,7 +10,7 @@ const MLAProfile = () => {
   return (
     <div className="max-w-5xl mx-auto p-6 bg-white shadow-lg rounded-lg">
       {/* Header */}
-      <header className="flex flex-col items-center md:flex-row md:items-start md:space-x-6 bg-orange-400 p-4 rounded-t-lg">
+      <header className="flex flex-col items-center md:flex-row md:items-start md:space-x-6 bg-yellow-400 p-4 rounded-t-lg">
         <img
           src={mla}
           alt="MLA Profile"
@@ -18,9 +18,9 @@ const MLAProfile = () => {
         />
         <div className="text-center md:text-left">
           <h1 className="text-3xl font-bold text-white">Varupula Satya Prabha</h1>
-          <h2 className="text-xl text-gray-200">MLA, Prathipadu Constituency</h2>
-          <h2 className="text-xl text-gray-200">Born : 1979</h2>
-          <h2 className="text-xl text-gray-200">Telugu Desam Party</h2>
+          <h2 className="text-xl text-slate-100">MLA, Prathipadu Constituency</h2>
+          <h2 className="text-xl text-slate-100">Born : 1979</h2>
+          <h2 className="text-xl text-slate-100">Telugu Desam Party</h2>
         </div>
       </header>
 

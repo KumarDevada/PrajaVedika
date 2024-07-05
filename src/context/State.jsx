@@ -1,20 +1,42 @@
 import Context from "./Context";
 import { useState , useEffect} from "react";
 
+const initialState = {
+  isdark: false,
+  isLoading: false,
+  ispopup: false,
+  islogin: false,
+  User: null,
+  mptcid: null,
+  isadmin: '',
+  // Include any other initial state values here
+};
+
 const State = (props) => {
 
-    const [isdark, setisdark] = useState(false)
-    const [isLoading, setisLoading] = useState(false)
-    const [ispopup, setispopup] = useState(false)
-    const [islogin, setislogin] = useState(false);
-    const [User, setUser] = useState(null);
-    const [mptcid, setmptcid] = useState(null);
-    const [isadmin, setadmin] = useState('')
+    const [isdark, setisdark] = useState(initialState.isdark)
+    const [isLoading, setisLoading] = useState(initialState.isLoading)
+    const [ispopup, setispopup] = useState(initialState.ispopup)
+    const [islogin, setislogin] = useState(initialState.islogin);
+    const [User, setUser] = useState(initialState.User);
+    const [mptcid, setmptcid] = useState(initialState.mptcid);
+    const [isadmin, setadmin] = useState(initialState.isadmin)
 
     const [mladata , setmladata] = useState({
       name : 'Varupula Satya Prabha',
       phone: '123'
     })
+
+    const resetState = () => {
+      setisdark(initialState.isdark);
+      setisLoading(initialState.isLoading);
+      setispopup(initialState.ispopup);
+      setislogin(initialState.islogin);
+      setUser(initialState.User);
+      setmptcid(initialState.mptcid);
+      setadmin(initialState.isadmin);
+      // Reset any other state values here
+    };
 
 
     const [mandalVillageData, setnothing] = useState({
@@ -418,7 +440,7 @@ const State = (props) => {
   
 
   return (
-    <Context.Provider value={{setisLoading ,isadmin , setadmin, mptcid, setmptcid, mladata, mandalVillageData ,isdark, User , setUser , setisdark , ispopup , setispopup ,islogin, setislogin }}>
+    <Context.Provider value={{ resetState ,setisLoading ,isadmin , setadmin, mptcid, setmptcid, mladata, mandalVillageData ,isdark, User , setUser , setisdark , ispopup , setispopup ,islogin, setislogin }}>
         {props.children}
     </Context.Provider>
   )
