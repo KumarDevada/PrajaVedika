@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from './Wrapper'
 // import Logo from "../assets/echakra.png";
-import Logo from "../assets/logo4.png";
+import Logo from "../assets/logofinal.png";
 import gsap from 'gsap';
 import { useState } from 'react';
 import {useContext } from 'react';
@@ -80,8 +80,8 @@ const Navbar = () => {
     <Wrapper>
       <div className='justify-between items-center flex h-[15vh]'>
         {/* Logo */}
-        <div className='flex gap-2 items-center cursor-pointer' onClick={()=>navigate('/')}>
-        <img src={Logo} alt="logo" className='w-16'/>
+        <div className='flex items-center cursor-pointer' onClick={()=>navigate('/')}>
+        <img src={Logo} alt="logo" className='w-32'/>
         <h1 className=' sm:text-md text-2xl font-montserrat font-bold text-orange-500'>PrajaVedika</h1>
         </div>
         
@@ -151,7 +151,7 @@ const Navbar = () => {
         
         </div>
         <div className='md:flex hidden gap-[5vh] items-center'>
-          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i class="fa-solid fa-location-dot"></i> Location</h1>) : (<h1 className=' font-montserrat text-lg font-bold text-green-500 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
+          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i className="fa-solid fa-location-dot"></i> Location</h1>) : (<h1 className=' font-montserrat text-lg font-bold text-green-500 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
           
         {!localStorage.getItem("user") ? (<div className='md:flex hidden gap-[5vh]'>
         <button style={{backgroundColor: '#34d399'}}
@@ -172,7 +172,7 @@ const Navbar = () => {
           <div className='md:flex hidden gap-[2vh]'>
            
             <button onClick={() => handleuserprofile()} className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {User?.username}</button>
-            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out <i class="fa-solid fa-right-to-bracket"></i></button>
+            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out <i className="fa-solid fa-right-to-bracket"></i></button>
             {/* <div className='flex w-fit h-fit cursor-pointer justify-center items-center p-2 rounded-lg border-2' onClick={()=>{navigate('/redeem')}} >
               <h1 className='font-semibold'>{User?.credits || 0} <i style={{color:'orange'}} "fa-brands fa-bitcoin"></i></h1>
               
@@ -197,7 +197,7 @@ const Navbar = () => {
             </button>)
         } */}
           <button onClick={toggleSidebar} className=' font-medium font-poppins hover:text-[#01796f] transition-transform'>
-          <i class="fa-solid fa-bars text-xl"></i>
+          <i className="fa-solid fa-bars text-xl"></i>
           </button>
 
           <div
@@ -228,25 +228,25 @@ const Navbar = () => {
                   <button
                     onClick={() => {navigate('/'); toggleSidebar()}}
                     className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    Home <i class="fa-solid fa-arrow-right"></i>
+                    Home <i className="fa-solid fa-arrow-right"></i>
                   </button>
                   <button
                     onClick={() => {navigate('/explore'); toggleSidebar()}}
                     className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    Query <i class="fa-solid fa-arrow-right"></i>
+                    Query <i className="fa-solid fa-arrow-right"></i>
                   </button>
                   {!localStorage.getItem("user") && (
                       <button
                         onClick={() => {navigate('/login'); toggleSidebar()}}
                         className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                        User Login <i class="fa-solid fa-arrow-right"></i>
+                        User Login <i className="fa-solid fa-arrow-right"></i>
                       </button>
                   )}
                   {!localStorage.getItem("user") && (
                       <button
                         onClick={() => {navigate('/adminlogin'); toggleSidebar()}}
                         className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                        Official Login <i class="fa-solid fa-arrow-right"></i>
+                        Official Login <i className="fa-solid fa-arrow-right"></i>
                       </button>
                   )}
 
@@ -254,20 +254,20 @@ const Navbar = () => {
                     <button
                       onClick={() => {handleuserprofile(); toggleSidebar()}}
                       className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                      My Profile <i class="fa-solid fa-arrow-right"></i>
+                      My Profile <i className="fa-solid fa-arrow-right"></i>
                     </button>
                   )}
                   
                   <button
                     onClick={() => {navigate('/mlaprofile'); toggleSidebar()}}
                     className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
-                    About MLA <i class="fa-solid fa-arrow-right"></i>
+                    About MLA <i className="fa-solid fa-arrow-right"></i>
                   </button>
                   {localStorage.getItem("user") && (
                       <button
                         onClick={() => {toggleSidebar();handlelogout()}}
                         className='text-white font-medium hover:bg-orange-300 bg-blue-400 active:bg-orange-500 py-1 rounded-md'>
-                        Log out <i class="fa-solid fa-right-to-bracket"></i>
+                        Log out <i className="fa-solid fa-right-to-bracket"></i>
                       </button>
                   )}
 
@@ -285,13 +285,13 @@ const Navbar = () => {
                       className="font-semibold font-montserrat  text-slate-600  cursor-pointer"
                       
                     >
-                      <h1 className='text-sm'><i class="fa-solid fa-envelope"></i> support@mail.com</h1>
+                      <h1 className='text-sm'><i className="fa-solid fa-envelope"></i> support@mail.com</h1>
                     </li>
                     <li
                       className="font-semibold font-montserrat text-center text-slate-600  cursor-pointer"
                       
                     >
-                      <h1 className='text-sm'><i class="fa-solid fa-phone"></i> +91 934343434</h1>
+                      <h1 className='text-sm'><i className="fa-solid fa-phone"></i> +91 934343434</h1>
                     </li>
                     
                   </ul>

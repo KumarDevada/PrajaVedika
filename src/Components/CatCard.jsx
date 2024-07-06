@@ -9,6 +9,7 @@ const CatCard = ({item}) => {
   const { User, isadmin, setisLoading} = useContext(Context);
   const [upvote, setupvote] = useState(false);
   const [passed, setpassed] = useState(false)
+  const [like, setlike] = useState(0);
   
 
   const st = ["Ward Member", "MPTC", "MPP", "MLA"]
@@ -102,6 +103,7 @@ const CatCard = ({item}) => {
 
       if (res.status == 200) {
         alert('upvoted successfully, changes need some time to reflect...')
+        setlike(1);
         setupvote(true);
       } else {
         alert(res.data.msg);
@@ -120,7 +122,7 @@ const CatCard = ({item}) => {
   }, [])
 
   return (
-    <div className=' bg-white md:max-w-full shadow-sm p-4 md:p-8 rounded-md flex flex-col  gap-[2vh] cursor-pointer ' >
+    <div className=' bg-white md:max-w-full shadow-sm p-4 md:p-8 rounded-md flex flex-col  gap-[2vh] ' >
         {/* <div className="w-full max-h-[25vh] flex z-10">
               <img src={image} alt="" className=" object-cover rounded-xl " />
         </div> */}
@@ -144,8 +146,8 @@ const CatCard = ({item}) => {
           
           <div className='w-full flex items-center justify-between h-8'>
             <div className='flex gap-2 items-center'>
-              {(isadmin === '') && <button  disabled={upvote} onClick={() => handleUpvote(item._id, item.mptc)} className=' rounded-xl hover:bg-blue-300 active:bg-orange-500 px-4 py-1 ml-2'><i  className={`text-xl font-bold fa-solid fa-thumbs-up ${ upvote ? 'text-blue-500' : 'text-slate-400'}`}></i></button>}
-              <p className='text-md text-slate-700  font-montserrat font-bold'>{(isadmin !== '') && '+ '} {item.upvotes.length}</p>
+              {(isadmin === '') && <button  disabled={upvote} onClick={() => handleUpvote(item._id, item.mptc)} className=' rounded-xl cursor-pointer   text-sm  px-4 py-1 ml-2'><i  className={`text-xl active:text-3xl transition-all duration-300 font-bold fa-solid fa-thumbs-up ${ upvote ? 'text-blue-500' : 'text-slate-400'}`}></i></button>}
+              <p className='text-md text-slate-700  font-montserrat font-bold'>{(isadmin !== '') && '+ '} {item.upvotes.length + like}</p>
             </div>
 
             <div>

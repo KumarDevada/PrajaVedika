@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Poster = () => {
 
-  const {isdark, islogin} = useContext(Context)
+  const {isdark, islogin, User} = useContext(Context)
   const [isLoading, setisLoading] = useState(false);
   const [city, setcity] = useState("");
   const [isdowncity, setisdowncity] = useState(false);
@@ -68,7 +68,7 @@ const Poster = () => {
               // onClick={() => {city ? navigate(`/search/${state}/${city}`) : (alert("Please select a city"))}}
               onClick={() => handleclick()}
             >
-              Query page
+              {!islogin && 'Get Started'} {User?.aadhar && 'Raise a Query'} { User?.mptc && 'Query Page'}
             </button>
           </div>
         </div>

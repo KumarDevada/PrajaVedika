@@ -89,6 +89,10 @@ const Explore = () => {
     useEffect(() => {
         setloading(true);
         console.log('Queries page is opened....');
+        if(!islogin) {
+            navigate('/')
+            return;
+        }
         async function fetchData() {
             const storedUser = localStorage.getItem('user');
             if (storedUser) {

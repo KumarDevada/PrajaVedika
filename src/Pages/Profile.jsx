@@ -3,8 +3,10 @@ import mla from '../assets/newprofile.jpg'
 
 import Context from '../context/Context';
 import { Loading} from "../Components";
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+    const navigate = useNavigate()
   const [showFullBio, setShowFullBio] = useState(false);
   const [loading, setloading] = useState(false);
   const { resetState ,isdark , setisdark, setadmin , setislogin, islogin , User, setUser, mandalVillageData} = useContext(Context)
@@ -25,6 +27,10 @@ const Profile = () => {
   useEffect(() => {
     setloading(true);
     console.log('Profile page is opened....');
+    if(!islogin) {
+        navigate('/')
+        return;
+    }
     async function fetchData() {
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
@@ -111,9 +117,9 @@ const Profile = () => {
           className="w-36 h-36 rounded-full border-4 border-white mb-4 md:mb-0"
         />
         <div className="text-center md:text-left">
-          <h1 className="text-3xl mb-1 font-bold text-blue-600">{User.username}</h1>
-          <h2 className="text-xl mb-1 text-slate-500 font-semibold"><i class="fa-solid fa-phone"></i> : {User.phoneNumber}</h2>
-          <h2 className="text-xl text-slate-500 font-semibold"> Aadhar : {User.aadhar}</h2>
+          <h1 className="text-3xl mb-1 font-bold text-blue-600">{User?.username}</h1>
+          <h2 className="text-xl mb-1 text-slate-500 font-semibold"><i className="fa-solid fa-phone"></i> : {User?.phoneNumber}</h2>
+          <h2 className="text-xl text-slate-500 font-semibold"> Aadhar : {User?.aadhar}</h2>
         </div>
 
         
@@ -127,9 +133,9 @@ const Profile = () => {
       <section className="mt-6 flex flex-col gap-6 md:flex-row px-4 bg-orange-100 p-4 rounded-lg">
         
         <div className="text-center p-4 w-fit">
-            <h1 className='text-center text-2xl mt-2 font-bold text-orange-500'><i class="fa-solid fa-location-dot"></i> Address</h1>
-            <h2 className="text-2xl text-orange-400 font-semibold">{User.mandalName} Mandal</h2>
-            <h2 className="text-xl text-orange-400 font-semibold">{User.villageName} Village</h2>
+            <h1 className='text-center text-2xl mt-2 font-bold text-orange-500'><i className="fa-solid fa-location-dot"></i> Address</h1>
+            <h2 className="text-2xl text-orange-400 font-semibold">{User?.mandalName} Mandal</h2>
+            <h2 className="text-xl text-orange-400 font-semibold">{User?.villageName} Village</h2>
         </div>
         
 
@@ -155,7 +161,7 @@ const Profile = () => {
 
       <section className="mt-6 w-full flex justify-center items-center px-4">
         <button onClick={() => handlelogout()} className="bg-blue-500 font-semibold text-white py-2 px-4 rounded-full hover:bg-orange-600">
-          Log Out <i class="fa-solid fa-right-to-bracket"></i>
+          Log Out <i className="fa-solid fa-right-to-bracket"></i>
         </button>
       </section>
     </div>
