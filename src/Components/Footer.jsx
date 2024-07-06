@@ -7,7 +7,7 @@ const Footer = () => {
   const navigate = useNavigate()
   return (
     <div>
-      <div className="h-fit w-full mt-[20vh] flex items-center flex-col md:flex-row justify-evenly shadow-md bg-slate-300  p-5">
+      <div className="h-fit w-full mt-[20vh] flex items-center flex-col md:flex-row justify-evenly shadow-md bg-blue-200  p-5">
           <div className=" w-36 md:w-[250px]">
             <img src={Logo} alt="logo" className="w-full" />
           </div>
@@ -93,7 +93,7 @@ const Footer = () => {
             </li>
             
           </ul>
-          
+
           <div>
           
           </div>

@@ -57,6 +57,12 @@ const Navbar = () => {
     }
   }
 
+  const handleuserprofile  = () => {
+    if(User?.aadhar) {
+      navigate('/profile')
+    }
+  }
+
 
   const handlelogout = () => {
     const yes = confirm('Are you sure you want to log out ?');
@@ -145,7 +151,7 @@ const Navbar = () => {
         
         </div>
         <div className='md:flex hidden gap-[5vh] items-center'>
-          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>Location</h1>) : (<h1 className=' font-mono text-lg font-bold text-[#34d399] flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
+          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i class="fa-solid fa-location-dot"></i> Location</h1>) : (<h1 className=' font-montserrat text-lg font-bold text-green-500 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
           
         {!localStorage.getItem("user") ? (<div className='md:flex hidden gap-[5vh]'>
         <button style={{backgroundColor: '#34d399'}}
@@ -165,7 +171,7 @@ const Navbar = () => {
         </div>) :(
           <div className='md:flex hidden gap-[2vh]'>
            
-            <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {User?.username}</button>
+            <button onClick={() => handleuserprofile()} className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {User?.username}</button>
             <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out <i class="fa-solid fa-right-to-bracket"></i></button>
             {/* <div className='flex w-fit h-fit cursor-pointer justify-center items-center p-2 rounded-lg border-2' onClick={()=>{navigate('/redeem')}} >
               <h1 className='font-semibold'>{User?.credits || 0} <i style={{color:'orange'}} "fa-brands fa-bitcoin"></i></h1>
@@ -191,7 +197,7 @@ const Navbar = () => {
             </button>)
         } */}
           <button onClick={toggleSidebar} className=' font-medium font-poppins hover:text-[#01796f] transition-transform'>
-          <i className="fi fi-br-menu-burger text-xl"></i>
+          <i class="fa-solid fa-bars text-xl"></i>
           </button>
 
           <div
@@ -214,6 +220,7 @@ const Navbar = () => {
                   </button>
                   {localStorage.getItem("user") && (
                         <button
+                          onClick={() => {handleuserprofile(); toggleSidebar()}}
                           className='text-gray-700  font-medium  bg-white rounded-md'>
                           <i className='fa fa-user'></i> {User?.username}
                         </button>
@@ -242,6 +249,14 @@ const Navbar = () => {
                         Official Login <i class="fa-solid fa-arrow-right"></i>
                       </button>
                   )}
+
+                  {localStorage.getItem("user") && (User?.aadhar)  && (
+                    <button
+                      onClick={() => {handleuserprofile(); toggleSidebar()}}
+                      className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-white active:bg-orange-500 py-1 rounded-md'>
+                      My Profile <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                  )}
                   
                   <button
                     onClick={() => {navigate('/mlaprofile'); toggleSidebar()}}
@@ -251,7 +266,7 @@ const Navbar = () => {
                   {localStorage.getItem("user") && (
                       <button
                         onClick={() => {toggleSidebar();handlelogout()}}
-                        className='text-gray-500 hover:text-white font-medium hover:bg-orange-300 bg-blue-400 active:bg-orange-500 py-1 rounded-md'>
+                        className='text-white font-medium hover:bg-orange-300 bg-blue-400 active:bg-orange-500 py-1 rounded-md'>
                         Log out <i class="fa-solid fa-right-to-bracket"></i>
                       </button>
                   )}

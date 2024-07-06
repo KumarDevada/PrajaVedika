@@ -10,6 +10,7 @@ import State from './context/State';
 import QueryForm from './Pages/QueryForm';
 import AdminLogin from './Pages/AdminLogin';
 import MLAProfile from './Pages/MLAProfile';
+import Profile from './Pages/Profile';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route exact path="/" element={<Homepage/>} />
           <Route exact path="/login" element={<Login/>} />
           <Route exact path="/adminlogin" element={<AdminLogin />} />
-          <Route exact path="/register" element={<Login/>} />
+          <Route exact path="/profile" element={<Profile />} />
           <Route exact path="/explore" element={<Explore/>} />
           <Route exact path="/queryform" element={<QueryForm/>} />
           <Route exact path="/mlaprofile" element={<MLAProfile />} />
