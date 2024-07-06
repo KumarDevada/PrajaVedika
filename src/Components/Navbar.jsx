@@ -81,7 +81,7 @@ const Navbar = () => {
       <div className='justify-between items-center flex h-[15vh]'>
         {/* Logo */}
         <div className='flex items-center cursor-pointer' onClick={()=>navigate('/')}>
-        <img src={Logo} alt="logo" className='w-32'/>
+        <img src={Logo} alt="logo" className=' w-16 md:w-32'/>
         <h1 className=' sm:text-md text-2xl font-montserrat font-bold text-orange-500'>PrajaVedika</h1>
         </div>
         
@@ -151,7 +151,7 @@ const Navbar = () => {
         
         </div>
         <div className='md:flex hidden gap-[5vh] items-center'>
-          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i className="fa-solid fa-location-dot"></i> Location</h1>) : (<h1 className=' font-montserrat text-lg font-bold text-green-500 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
+          {!localStorage.getItem("user") ? (<h1 className=' font-montserrat font-bold text-orange-500 flex items-center gap-[1vh]'><i className="fa-solid fa-location-dot"></i> Location</h1>) : (<h1 className=' font-montserrat text-lg font-bold text-green-600 flex items-center gap-[1vh]'><i className="fi fi-rr-marker"></i>{User?.villageName}</h1>)}
           
         {!localStorage.getItem("user") ? (<div className='md:flex hidden gap-[5vh]'>
         <button style={{backgroundColor: '#34d399'}}
