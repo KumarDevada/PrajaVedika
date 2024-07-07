@@ -159,10 +159,18 @@ const Explore = () => {
                       }
               
                       const data = await response.json();
-                      console.log('successfully fetched all queries for mptc');
-                      const filteredQueries = data.filter(query => query.level.toLowerCase() === 'mptc');
-                      console.log(filteredQueries);
-                      setQueries(filteredQueries);
+                      console.log('successfully fetched all queries for->', isadmin);
+                      if(isadmin === 'mptc') {
+                        const filteredQueries = data.filter(query => query.level === 'MPTC');
+                        console.log(filteredQueries);
+                        setQueries(filteredQueries);
+                      }
+                      else {
+                        const filteredQueries = data;
+                        console.log(filteredQueries);
+                        setQueries(filteredQueries);
+                      }
+                      
                     } catch (error) {
                       console.error('Error fetching queries:', error);
                       // Handle error state or show a message to the user
@@ -292,9 +300,9 @@ const Explore = () => {
 
                 <div className='w-full flex flex-col gap-3  md:ml-8 mt-4 bg-white p-4 rounded-lg'>
                     <h1 className='text-lg text-slate-500 font-montserrat font-bold text-center'>Filter</h1>
-                    <button className='text-md text-slate-500 font-montserrat font-bold bg-slate-200 p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600' onClick={() => handleFilterClick('my')}>My Queries</button>
-                    <button className='text-md text-slate-500 font-montserrat font-bold bg-slate-200 p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600' onClick={() => handleFilterClick('resolved')}>Resolved</button>
-                    <button className='text-md text-slate-500 font-montserrat font-bold bg-slate-200 p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600' onClick={() => handleFilterClick('unresolved')}>Un-resolved</button>
+                    {isadmin === '' && <button className={`text-md text-slate-500 font-montserrat font-bold ${filterType==='my' ? 'bg-green-300' : 'bg-slate-200'} p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600`} onClick={() => handleFilterClick('my')}>My Queries</button>}
+                    <button className={`text-md text-slate-500 font-montserrat font-bold ${filterType==='resolved' ? 'bg-green-300' : 'bg-slate-200'} p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600`} onClick={() => handleFilterClick('resolved')}>Resolved</button>
+                    <button className={`text-md text-slate-500 font-montserrat font-bold ${filterType==='unresolved' ? 'bg-green-300' : 'bg-slate-200'} p-2 px-8 rounded-md shadow-md hover:bg-green-300 active:bg-green-600`} onClick={() => handleFilterClick('unresolved')}>Un-resolved</button>
                 </div>
 
 

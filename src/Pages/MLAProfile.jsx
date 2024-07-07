@@ -141,11 +141,11 @@ const MLAProfile = () => {
       </section>
 
       {/* Call-to-Action */}
-      <section className="mt-6 px-4">
+      {/* <section className="mt-6 px-4">
         <button onClick={() => alert('Feature coming soon')} className="bg-orange-500 text-white py-2 px-4 rounded hover:bg-orange-600">
           Contact Me
         </button>
-      </section>
+      </section> */}
     </div>
   );
 };

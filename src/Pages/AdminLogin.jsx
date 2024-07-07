@@ -42,6 +42,7 @@ const AdminLogin = () => {
                 username : mandalVillageData[mandal].mpp.name,
                 mandalName : mandal,
                 villageName : mandal,
+                mpp: true,
               }
               localStorage.setItem("user", JSON.stringify(temp));
               setUser(temp);
@@ -72,6 +73,7 @@ const AdminLogin = () => {
             username : mladata.name,
             mandalName : 'Prathipadu',
             villageName : 'Prathipadu',
+            mla : true,
           }
           localStorage.setItem("user", JSON.stringify(temp));
           setUser(temp);

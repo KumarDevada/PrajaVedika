@@ -20,7 +20,13 @@ const Navbar = () => {
       console.log(storedUser);
       setUser(JSON.parse(storedUser));
       setislogin(true); // Assuming you want to set the user as logged in if there's a user in localStorage
-      if(storedUser.mandalName === storedUser.villageName) {
+      if(storedUser?.mla) {
+        setadmin('mla')
+      }
+      else if(storedUser?.mpp) {
+        setadmin('mpp')
+      }
+      else if(storedUser.mandalName === storedUser.villageName) {
         setadmin('mptc')
       }
     }
@@ -58,9 +64,9 @@ const Navbar = () => {
   }
 
   const handleuserprofile  = () => {
-    if(User?.aadhar) {
+    // if(User?.aadhar) {
       navigate('/profile')
-    }
+    // }
   }
 
 
@@ -201,14 +207,14 @@ const Navbar = () => {
           </button>
 
           <div
-              className={`fixed z-20 top-0 right-0 w-68 bg-slate-200 shadow-lg h-full transform ${
+              className={`fixed z-20 top-0 right-0 w-68 bg-slate-200 shadow-xl h-full transform ${
                 isOpen ? 'translate-x-0' : 'translate-x-full'
               } transition-transform duration-300 ease-in-out`}>
               <div className="p-4 mt-8">
                 <div className='w-full'>
                   <button
                     onClick={toggleSidebar}
-                    className='text-gray-600 ml-36 hover:text-gray-800 font-bold mb-4 px-2 rounded-md hover:bg-red-300 '>
+                    className='text-gray-600 ml-56 hover:text-gray-800 font-bold mb-4 px-2 rounded-md hover:bg-red-300 '>
                     <i className='fa fa-close'></i>
                   </button>
                 </div>
@@ -285,7 +291,7 @@ const Navbar = () => {
                       className="font-semibold font-montserrat  text-slate-600  cursor-pointer"
                       
                     >
-                      <h1 className='text-sm'><i className="fa-solid fa-envelope"></i> support@mail.com</h1>
+                      <h1 className='text-sm'><i className="fa-solid fa-envelope"></i> prajavedikaofficial@gmail.com</h1>
                     </li>
                     <li
                       className="font-semibold font-montserrat text-center text-slate-600  cursor-pointer"

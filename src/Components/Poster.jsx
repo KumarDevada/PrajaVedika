@@ -68,7 +68,7 @@ const Poster = () => {
               // onClick={() => {city ? navigate(`/search/${state}/${city}`) : (alert("Please select a city"))}}
               onClick={() => handleclick()}
             >
-              {!islogin && 'Get Started'} {User?.aadhar && 'Raise a Query'} { User?.mptc && 'Query Page'}
+              {!islogin && 'Get Started'} {User?.aadhar && 'Raise a Query'} { User?.mptc && 'Query Page'} {(islogin && !User?.aadhar && !User?.mptc) && 'Query Page'}
             </button>
           </div>
         </div>
