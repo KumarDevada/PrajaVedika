@@ -6,6 +6,7 @@ import Context from '../context/Context';
 import { ScrollTrigger } from 'gsap/all';
 import { Draggable } from 'gsap/all';
 import { set } from 'mongoose';
+import Announcements from './Announcements';
 
 const Homepage = () => {
 
@@ -26,6 +27,7 @@ const Homepage = () => {
     <Wrapper>
       {/* {ispopup ? <Popup/> : null} */}
       <Poster/>
+      <Announcements />
     </Wrapper>
   )
 }
