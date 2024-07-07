@@ -177,7 +177,7 @@ const Navbar = () => {
         </div>) :(
           <div className='md:flex hidden gap-[2vh]'>
            
-            <button onClick={() => handleuserprofile()} className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {User?.username}</button>
+            <button onClick={() => handleuserprofile()} className=' font-medium  font-poppins px-4 py-2 rounded-3xl transition-transform nav' ><i className="fi fi-sr-user"></i> {(User?.mptc || User?.mpp) ? 'My Profile' : User?.username}</button>
             <button className=' font-medium  font-poppins px-4 py-2 rounded-3xl bg-blue-400 hover:bg-[#34d399]  transition-transform nav' onClick={() => {handlelogout();navigate('/')}} > Log out <i className="fa-solid fa-right-to-bracket"></i></button>
             {/* <div className='flex w-fit h-fit cursor-pointer justify-center items-center p-2 rounded-lg border-2' onClick={()=>{navigate('/redeem')}} >
               <h1 className='font-semibold'>{User?.credits || 0} <i style={{color:'orange'}} "fa-brands fa-bitcoin"></i></h1>

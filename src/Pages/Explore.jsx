@@ -256,7 +256,7 @@ const Explore = () => {
                         <div>
                             
                             <hr />
-                            <h1 className='font-medium mt-3 text-md text-slate-500'>MPTC for mptc</h1>
+                            <h1 className='font-medium mt-3 text-md text-slate-500'>MPTC & Village level</h1>
                             <h1 className='font-medium mb-3 text-xl text-orange-400'>{User.username}</h1>
                         </div>
                     )}
@@ -265,7 +265,7 @@ const Explore = () => {
 
                     {(isadmin !== 'mla') && (
                         <div>
-                            <h1 className='font-medium mt-3 text-md text-slate-500'>MPP</h1>
+                            <h1 className='font-medium mt-3 text-md text-slate-500'>MPP & MPDO & RWSJE & PRJE</h1>
                             <h1 className='font-medium mb-3 text-xl text-orange-400'>{mpp}</h1>
                             <hr />
                             <h1 className='font-medium mt-3 text-md text-slate-500'>ZPTC</h1>
